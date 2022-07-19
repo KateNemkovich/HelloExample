@@ -6,12 +6,6 @@ Console.WriteLine("I will try");
 Console.WriteLine("Hello Kate!");
 Console.WriteLine("Hello World!");
 Console.WriteLine("Just hello");
-Console.WriteLine("Hello, Git!");
-Console.WriteLine("Hello, Git!");
-Console.WriteLine("Hello, Git!");
-Console.WriteLine("Hello, Git!");
-Console.WriteLine("Hello, Git!");
-Console.WriteLine("Hello, Git!");
 Console.WriteLine("Hello,Roma");
 Console.WriteLine("Hello,Kate");
  
