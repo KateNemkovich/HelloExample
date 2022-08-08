@@ -1,9 +1,11 @@
 using Json.Objects;
 using Json.Objects.Enums;
+using Newtonsoft.Json;
+using System.Text.Json;
+using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
 Console.WriteLine("Hello, Roma");
 Console.WriteLine("Hello, Kate");
-
 var ourHistory = new OurHistory
 {
     Title = "Years",
@@ -98,7 +100,21 @@ var ourHistory = new OurHistory
             SomeList = new List<int>(){1,2,3,4,5,6,7,8,9}
         }
     }
+    
 };
+
+JsonSerializerOptions option = new JsonSerializerOptions()
+ {
+     WriteIndented = true
+ };
+
+JsonSerializerOptions options = new JsonSerializerOptions()
+ {
+     IgnoreNullValues = false
+};
+//var json =  JsonSerializer.Serialize(ourHistory, options);
+//var json = JsonSerializer.Serialize(ourHistory, typeof(OurHistory));
+var json = JsonConvert.SerializeObject(ourHistory);
 
 //TODO Подключить Nuget пакет Newtonsoft.Json
 //TODO Добавить в класс YearStory поля на все стандартные типы данных, bool, double, string, Enum HappinessLevel
@@ -123,3 +139,5 @@ File.WriteAllText(jsonPath, json);
 //Считывает Json с файла
 var text = File.ReadAllText(jsonPath);
 //TODO десереализовать Json здесь
+OurHistory restoredHistory=JsonConvert.DeserializeObject<OurHistory>(json);
+Console.WriteLine(restoredHistory);
