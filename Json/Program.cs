@@ -139,5 +139,8 @@ File.WriteAllText(jsonPath, json);
 //Считывает Json с файла
 var text = File.ReadAllText(jsonPath);
 //TODO десереализовать Json здесь
-OurHistory restoredHistory=JsonConvert.DeserializeObject<OurHistory>(json);
+
+var restoredHistory = JsonConvert.DeserializeObject<OurHistory>(json);
+// var restoredHistory = JsonConvert.DeserializeObject<OurHistory>(File.ReadAllText( "Story.json"));
+// OurHistory restoredHistory=JsonConvert.DeserializeObject<OurHistory>(json);
 Console.WriteLine(restoredHistory);
