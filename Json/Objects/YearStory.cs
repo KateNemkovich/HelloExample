@@ -1,4 +1,5 @@
 ﻿using Json.Objects.Enums;
+using Newtonsoft.Json;
 
 namespace Json.Objects;
 
@@ -8,6 +9,7 @@ public class YearStory
     public bool X { get; set; }
     public double Y { get; set; }
     
+    [JsonIgnore]
     public string Q { get; set; }
     public HappinessLevel HappinessLevel {get;set;}
 
